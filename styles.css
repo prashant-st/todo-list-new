@@ -7,6 +7,7 @@
 
 body {
     background-color: black;
+    min-height: 100vh;
 }
 
 nav {
@@ -26,4 +27,14 @@ nav h4 {
 nav a {
     padding: 0px 30px;
     text-decoration: none;
+}
+
+footer {
+    display: flex;
+    height: 180px;
+    width: 100%;
+    background-color: orangered;
+    position: sticky;
+    top: 100%;
+    justify-content: center;
 }
