@@ -3,6 +3,7 @@
 * {
     color: white;
     font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -39,4 +40,23 @@ footer {
     position: sticky;
     top: 100%;
     justify-content: center;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+    list-style-type: none;
+    width: 100vw;
 }
