@@ -32,6 +32,10 @@ nav a {
     color: white;
 }
 
+nav li {
+    color: white;
+}
+
 footer {
     display: flex;
     height: 180px;
@@ -47,7 +51,7 @@ footer {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 12px 16px 12px 16px;
+    padding: 0px 16px 12px 16px;
 }
 
 ul {
@@ -55,8 +59,27 @@ ul {
     padding: 0;
 }
 
-ul li {
+.tasks-list-li {
     position: relative;
     list-style-type: none;
     width: 100vw;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    left: 16px;
+    top: 3px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
 }

@@ -27,4 +27,9 @@ function addNewElement() {
             div.style.display = "none";
         }
     }
+    var list = document.querySelector("#tasks-list-ul");
+    list.addEventListener("click", function (ev) {
+        ev.target.classList.toggle("checked");
+
+    });
 }
