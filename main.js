@@ -1,5 +1,10 @@
 var allTasks = document.getElementsByClassName("close");
 
+var dragarea = document.querySelector(".tasks-list-ul");
+new Sortable(dragarea, {
+    animation: 350
+});
+
 function addNewElement() {
     var input = document.getElementById("input field").value;
 
@@ -40,6 +45,7 @@ function addNewElement() {
             li.classList.toggle("checked");
             console.log(event);
         });
+
 
     }
     else {
