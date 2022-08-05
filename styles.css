@@ -69,6 +69,7 @@ ul {
 
 ul li.checked {
     text-decoration: line-through;
+    background-color: grey;
 }
 
 ul li.checked::before {

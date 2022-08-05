@@ -15,6 +15,7 @@ function addNewElement() {
 
     li.appendChild(i);
     li.className = "tasks-list-li";
+    li.accessKey = 'a';
 
     var ul = document.getElementById("tasks-list-ul");
     ul.appendChild(li);
