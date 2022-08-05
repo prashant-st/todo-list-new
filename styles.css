@@ -41,6 +41,7 @@ footer {
     height: 180px;
     width: 100%;
     background-color: #212529;
+    /* background-color: transparent; */
     position: sticky;
     top: 100%;
     justify-content: center;
@@ -83,4 +84,19 @@ ul li.checked::before {
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
+}
+
+.button-div {
+    display: flex;
+    flex-direction: column;
+    position: inherit;
+    bottom: 0;
+}
+
+.button {
+    margin: 12px
+}
+
+.body {
+    height: 100%;
 }
