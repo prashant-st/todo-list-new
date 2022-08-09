@@ -75,17 +75,11 @@ function onSave() {
 }
 
 function onLoad() {
-    var ul = document.getElementById("tasks-list-ul");
-    console.log(count);
     for (var j = 1; j <= count; j++) {
-        console.log("i:" + count);
         if (localStorage.getItem("task" + j) != null) {
             var task = JSON.parse(localStorage.getItem("task" + j));
             var li = document.createElement("li");
             li.className = "tasks-list-li";
-            if (task['isDone']) {
-                li.className = 'checked';
-            }
 
             var textNode = document.createTextNode(task['text'].slice(0, task['text'].length - 1));
 
@@ -99,7 +93,13 @@ function onLoad() {
 
             li.appendChild(i);
 
+            var ul = document.getElementById("tasks-list-ul");
+            if (task['isDone']) {
+                li.classList.add("checked");
+            }
             ul.appendChild(li);
+
+            console.log("parent:" + li.parentElement.className);
 
             var allTasks = document.getElementsByClassName("close");
             for (var i = 0; i < allTasks.length; i++) {
@@ -110,8 +110,8 @@ function onLoad() {
             }
 
             var list = document.querySelector("#tasks-list-ul");
+            console.log("list:" + list);
             list.addEventListener("click", function (ev) {
-                console.log("clicked");
                 ev.target.classList.toggle("checked");
             });
         }
