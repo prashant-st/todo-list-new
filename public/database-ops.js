@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDGPmki-WjYPZxq6sppxT_f22hPMf3Izj8",
@@ -14,3 +14,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+
+// function to save the new to-do list item to the backend
+export function saveToDoItem(text, isDone) {
+    const pathRef = ref(db, users);
+    set(pathRef, {
+        text: text,
+        isDone: isDone
+    });
+}

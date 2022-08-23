@@ -1,3 +1,4 @@
+import { saveToDoItem } from "./database-ops.js";
 // localStorage.setItem("tasks", JSON.stringify([["key1", "value1"], ["key2", "value2"]]));
 
 var count = 0;
@@ -12,7 +13,7 @@ new Sortable(dragarea, {
     animation: 350
 });
 
-function addNewElement() {
+export function addNewElement() {
     var input = document.getElementById("input field").value;
 
     if (input.length > 0) {
@@ -62,7 +63,7 @@ function addNewElement() {
     }
 }
 
-function onSave() {
+export function onSave() {
     var allTasks = [...document.querySelectorAll(".tasks-list-li")];
     console.log(allTasks);
     allTasks.forEach((task, index) => {
@@ -71,10 +72,11 @@ function onSave() {
             "isDone": (task.classList.contains("checked")) ? true : false,
         }
         localStorage.setItem("task" + (index + 1), JSON.stringify(task));
+        saveToDoItem(task.text, task.isDone);
     });
 }
 
-function onLoad() {
+export function onLoad() {
     for (var j = 1; j <= count; j++) {
         if (localStorage.getItem("task" + j) != null) {
             var task = JSON.parse(localStorage.getItem("task" + j));
